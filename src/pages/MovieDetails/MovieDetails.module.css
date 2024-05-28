@@ -1,5 +1,4 @@
 .movieDetailsContainer{
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -16,4 +15,15 @@
 }
 .castReviewDiv {
   border-bottom: 1px solid grey;
+  
+}
+
+.castReviewDiv li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+.castReviewDiv li a:hover{
+  color: orangered;
 }

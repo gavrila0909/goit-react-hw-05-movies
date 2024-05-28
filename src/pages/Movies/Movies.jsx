@@ -31,10 +31,10 @@ const Movies = () => {
   };
 
   return (
-    <section>
+    <>
       <Searchbar onSubmit={handleSubmit} />
       {isLoading ? <Loader /> : <SearchMoviesList movies={movies} />}
-    </section>
+    </>
   );
 };
 

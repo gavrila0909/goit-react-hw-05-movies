@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
-import {Link} from '../../components/App.styled'
+import { Outlet,Link } from 'react-router-dom';
 import { getMovieDetails, IMAGE_URL } from 'Helpers/API';
 import Loader from 'components/Loader/Loader';
 import styles from './MovieDetails.module.css';

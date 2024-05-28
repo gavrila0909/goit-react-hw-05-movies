@@ -1,4 +1,4 @@
-import { Link } from '../App.styled';
+import { Link } from "react-router-dom";
 import { IMAGE_URL } from '../../Helpers/API';
 import styles from './SearchMoviesList.module.css';
 
