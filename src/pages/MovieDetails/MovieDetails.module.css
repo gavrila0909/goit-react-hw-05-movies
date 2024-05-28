@@ -1,0 +1,19 @@
+.movieDetailsContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.movieInfo {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid grey;
+}
+.movieExtraInfo {
+  padding: 10px;
+  
+}
+.castReviewDiv {
+  border-bottom: 1px solid grey;
+}

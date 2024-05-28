@@ -1,0 +1,35 @@
+.tredingContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.tredingContainer h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.tredingContainer ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  list-style: none;
+  align-items: baseline;
+  justify-items: center;
+}
+
+
+.tredingContainer li {
+  list-style-type: none;
+}
+.tredingContainer li:hover {
+    transform: scale(1.02);
+  }
+
+.tredingContainer img {
+  width: 100%;
+  height: auto;
+}
+.tredingContainer p {
+    margin-top: 5px;
+}
