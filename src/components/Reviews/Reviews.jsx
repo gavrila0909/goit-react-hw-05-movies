@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews, IMAGE_URL } from 'Helpers/API';
+import { getMovieReviews} from 'Helpers/API';
 import Loader from '../Loader/Loader';
 
 const Reviews = () => {

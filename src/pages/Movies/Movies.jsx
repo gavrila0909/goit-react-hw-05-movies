@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useSearchParams } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import {BackLink} from '../../Helpers/Link.styled';
 import { getSearchMovies } from 'Helpers/API';
 import Loader from '../../components/Loader/Loader';
