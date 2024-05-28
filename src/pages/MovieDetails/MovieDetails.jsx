@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Outlet,Link } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import { BackLink } from '../../Helpers/Link.styled';
 import { getMovieDetails, IMAGE_URL } from 'Helpers/API';
 import Loader from 'components/Loader/Loader';
 import styles from './MovieDetails.module.css';
@@ -9,6 +10,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -28,9 +31,7 @@ const MovieDetails = () => {
 
   return (
     <>
-    {/* <div>
-      <Button>{<- Go Back}</Button>
-    </div> */}
+      <BackLink to={backLinkHref}> ❮ Go Back</BackLink>
       {isLoading ? (
         <Loader />
       ) : (
@@ -45,7 +46,10 @@ const MovieDetails = () => {
               <p>User score: {movieDetails.vote_average.toFixed(1)} %</p>
               <h4>Overview</h4>
               <p>{movieDetails.overview}</p>
-              <p><b>Genre:</b> {movieDetails.genres.map(genre => genre.name).join(' ')}</p>
+              <p>
+                <b>Genre:</b>{' '}
+                {movieDetails.genres.map(genre => genre.name).join(' ')}
+              </p>
             </div>
           </div>
           <div className={styles.movieExtraInfo}>

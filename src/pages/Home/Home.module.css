@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: 10px;
 }
-.tredingContainer h2 {
+.tredingContainer h1 {
   display: flex;
   justify-content: center;
 }

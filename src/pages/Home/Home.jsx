@@ -30,7 +30,7 @@ const Home = () => {
         <Loader />
       ) : (
         <>
-          <h2>Trending today</h2>
+          <h1>Trending movies today</h1>
           <ul>
             {movies.map(movie => (
               <li key={movie.id}>
