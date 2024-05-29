@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getMovies, IMAGE_URL } from '../../Helpers/API';
 import Loader from '../../components/Loader/Loader';
 import styles from './Home.module.css';
@@ -25,7 +26,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={styles.tredingContainer}>
+    <div className={styles.trendingContainer}>
       {isLoading ? (
         <Loader />
       ) : (
@@ -39,7 +40,7 @@ const Home = () => {
                     src={IMAGE_URL + movie.backdrop_path}
                     alt={movie.title}
                   />
-                  <p>{`${movie.title}`}</p>
+                  <p>{movie.title}</p>
                 </Link>
               </li>
             ))}
@@ -48,6 +49,16 @@ const Home = () => {
       )}
     </div>
   );
+};
+
+Home.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default Home;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { IMAGE_URL } from '../../Helpers/API';
 import styles from './SearchMoviesList.module.css';
@@ -26,6 +27,17 @@ const SearchMoviesList = ({ movies }) => {
       </div>
     </>
   );
+};
+
+SearchMoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+      release_date: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default SearchMoviesList;

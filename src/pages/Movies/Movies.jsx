@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import {BackLink} from '../../Helpers/Link.styled';
+import { BackLink } from '../../Helpers/Link.styled';
 import { getSearchMovies } from 'Helpers/API';
 import Loader from '../../components/Loader/Loader';
 import Searchbar from '../../components/Searchbar/Searchbar';
@@ -37,14 +38,18 @@ const Movies = () => {
 
   return (
     <>
-    <div className={styles.back}>
-      <BackLink to={backLinkHref}> ❮ Go Back</BackLink>
-      <Searchbar onSubmit={handleSubmit} />
-    </div>
-      
+      <div className={styles.back}>
+        <BackLink to={backLinkHref}> ❮ Go Back</BackLink>
+        <Searchbar onSubmit={handleSubmit} />
+      </div>
+
       {isLoading ? <Loader /> : <SearchMoviesList movies={movies} />}
     </>
   );
+};
+
+Movies.propTypes = {
+  movies: PropTypes.array,
 };
 
 export default Movies;

@@ -1,6 +1,6 @@
 import React from 'react';
 
- const NotFound = () => {
+const NotFound = () => {
   return (
     <main style={{ textAlign: 'center' }}>
       <b style={{ fontSize: 64 }}>404</b>
@@ -8,6 +8,5 @@ import React from 'react';
     </main>
   );
 };
-
 
 export default NotFound;

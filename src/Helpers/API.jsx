@@ -54,7 +54,7 @@ export const getMovieReviews = async movieId => {
   }
 };
 
-export const getSearchMovies = async (query) => {
+export const getSearchMovies = async query => {
   const fetchMoviesURL = `${URL}/search/movie?language=en-US&query=${query}&api_key=${API_KEY}`;
   try {
     const response = await axios.get(fetchMoviesURL);

@@ -10,7 +10,9 @@ const SharedLayout = () => {
           <Link to="/" end>
             Home
           </Link>
-           <Link to="/movies" > {/*nu pun END daca vreau sa se coloreze */}
+          <Link to="/movies">
+            {' '}
+            {/*nu pun END daca vreau sa se coloreze */}
             Movies
           </Link>
         </nav>

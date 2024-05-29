@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import { Outlet, Link } from 'react-router-dom';
+import { useParams, useLocation, Outlet, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { BackLink } from '../../Helpers/Link.styled';
 import { getMovieDetails, IMAGE_URL } from 'Helpers/API';
 import Loader from 'components/Loader/Loader';
@@ -70,6 +70,18 @@ const MovieDetails = () => {
       )}
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      backdrop_path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      overview: PropTypes.string.isRequired,
+      vote_average: PropTypes.string.isRequired,
+      genres: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default MovieDetails;

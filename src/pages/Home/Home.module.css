@@ -1,14 +1,14 @@
-.tredingContainer {
+.trendingContainer {
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
-.tredingContainer h1 {
+.trendingContainer h1 {
   display: flex;
   justify-content: center;
 }
 
-.tredingContainer ul {
+.trendingContainer ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 20px;
@@ -18,24 +18,22 @@
   justify-items: center;
 }
 
-
-.tredingContainer li {
+.trendingContainer li {
   list-style-type: none;
 }
-.tredingContainer li:hover {
-    transform: scale(1.02);
-  }
+.trendingContainer li:hover {
+  transform: scale(1.02);
+}
 
-.tredingContainer img {
+.trendingContainer img {
   width: 100%;
   height: auto;
 }
-.tredingContainer a {
+.trendingContainer a {
   color: black;
   text-decoration: none;
-  
 }
-.tredingContainer p {
-    margin-top: 5px;
-    font-weight: 500;
+.trendingContainer p {
+  margin-top: 5px;
+  font-weight: 500;
 }
