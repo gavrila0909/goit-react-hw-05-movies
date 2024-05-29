@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useParams, useLocation, Outlet, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { BackLink } from '../../Helpers/Link.styled';
@@ -64,7 +64,9 @@ const MovieDetails = () => {
                 </li>
               </ul>
             </div>
-            <Outlet />
+            <Suspense fallback={<div>Loading subpage...</div>}>
+              <Outlet />
+            </Suspense>
           </div>
         </div>
       )}
