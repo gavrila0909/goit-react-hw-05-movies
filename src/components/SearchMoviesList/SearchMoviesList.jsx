@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IMAGE_URL } from '../../Helpers/API';
 import styles from './SearchMoviesList.module.css';
 
 const SearchMoviesList = ({ movies }) => {
+  const location = useLocation();
   //console.log(movies);
   return (
     <>
@@ -11,6 +12,7 @@ const SearchMoviesList = ({ movies }) => {
         {movies.map(movie => (
           <Link
             to={`/movies/${movie.id}`}
+            state={{ from: location }}
             key={movie.id}
             className={styles.moviesList}
           >
