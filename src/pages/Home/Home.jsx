@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getMovies, IMAGE_URL } from '../../Helpers/API';
-import Loader from '../../components/Loader/Loader';
 import styles from './Home.module.css';
 
 const Home = () => {
