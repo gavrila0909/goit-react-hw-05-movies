@@ -39,10 +39,10 @@ const MovieDetails = () => {
           <div className={styles.movieInfo}>
             <img
               src={IMAGE_URL + movieDetails.backdrop_path}
-              alt={movieDetails.title}
+              alt={movieDetails.title || movieDetails.name}
             />
             <div>
-              <h1>{movieDetails.title}</h1>
+              <h1>{movieDetails.title || movieDetails.name}</h1>
               <p>User score: {movieDetails.vote_average.toFixed(1)} %</p>
               <h4>Overview</h4>
               <p>{movieDetails.overview}</p>

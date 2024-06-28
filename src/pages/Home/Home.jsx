@@ -11,7 +11,7 @@ const Home = () => {
     async function fetchMovies() {
       try {
         const response = await getMovies();
-        //console.log(response.results);
+        console.log(response.results);
         setMovies(response.results);
       } catch (error) {
         console.error('Error fetching trending movies:', error);
@@ -29,8 +29,8 @@ const Home = () => {
           {movies.map(movie => (
             <li key={movie.id}>
               <Link to={`/movies/${movie.id}`}>
-                <img src={IMAGE_URL + movie.backdrop_path} alt={movie.title} />
-                <p>{movie.title}</p>
+                <img src={IMAGE_URL + movie.backdrop_path} alt={movie.title || movie.name} />
+                <p>{movie.title || movie.name}</p>
               </Link>
             </li>
           ))}

@@ -1,21 +1,26 @@
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Searchbar.module.css';
 
-const Searchbar = ({ onSubmit }) => {
+const Searchbar = ({ onSubmit, resetQuery }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
+  const [inputValue, setInputValue] = useState(searchParams.get('query') ?? '');
 
-  //actualizam noua valoare input
+  useEffect(() => {
+    setInputValue('');
+  }, [resetQuery]);
+
   const handleInputChange = event => {
     const query = event.target.value;
+    setInputValue(query);
     const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit(query);
+    onSubmit(inputValue);
   };
 
   return (
@@ -27,10 +32,10 @@ const Searchbar = ({ onSubmit }) => {
           autoFocus
           placeholder="Search movies"
           name="inputValue"
-          value={query}
+          value={inputValue}
           onChange={handleInputChange}
         />
-        <button>Search</button>
+        <button type="submit">Search</button>
       </form>
     </>
   );
@@ -38,6 +43,7 @@ const Searchbar = ({ onSubmit }) => {
 
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  resetQuery: PropTypes.bool.isRequired,
 };
 
 export default Searchbar;
